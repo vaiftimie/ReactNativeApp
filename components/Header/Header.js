@@ -5,7 +5,7 @@ export default class Header extends Component {
     render() {
         return (
             <View style={{ flex: 1, backgroundColor: 'powderblue', flexDirection: 'row' }}>
-                <View style={{ flex: 1, backgroundColor: 'red', justifyContent: 'center' }}>
+                <View style={{ flex: 1, backgroundColor: 'turquoise', justifyContent: 'center' }}>
                     <Text style={{ textAlign: 'center', textAlignVertical: 'center' }}>This week</Text>
                 </View>
 
