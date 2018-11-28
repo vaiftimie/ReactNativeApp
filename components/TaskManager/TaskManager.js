@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
-import { View, Button, Alert } from 'react-native';
+import { ScrollView, Button } from 'react-native';
 import Task from '../Task/Task';
 
 export default class TaskManager extends Component {
     constructor(props) {
         super(props);
 
+        this.scroll = null;
         this.state = {
             tasks: []
         };
@@ -17,6 +18,9 @@ export default class TaskManager extends Component {
         this.setState(previousState => (
             { tasks: [...previousState.tasks, task] }
         ));
+        setTimeout(() => {
+            this.scroll.scrollToEnd();
+        }, 50);
     }
 
     removeTask(id) {
@@ -27,7 +31,7 @@ export default class TaskManager extends Component {
 
     render() {
         return (
-            <View>
+            <ScrollView ref={(scroll) => { this.scroll = scroll; }}>
                 <Button
                     onPress={() => {
                         this.addTask({
@@ -39,7 +43,7 @@ export default class TaskManager extends Component {
                 />
                 {this.state.tasks.map((task, index) => <Task key={index} task={this.state.tasks[index]} removeHandler={this.removeTask} />)}
                 {/* index as key is not ok - it is unique only in a very particular case */}
-            </View>
+            </ScrollView>
         );
     }
 }
