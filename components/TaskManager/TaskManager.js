@@ -38,6 +38,7 @@ export default class TaskManager extends Component {
                     title="Add a new task"
                 />
                 {this.state.tasks.map((task, index) => <Task key={index} task={this.state.tasks[index]} removeHandler={this.removeTask} />)}
+                {/* index as key is not ok - it is unique only in a very particular case */}
             </View>
         );
     }

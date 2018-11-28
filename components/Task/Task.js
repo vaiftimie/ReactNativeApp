@@ -14,7 +14,14 @@ export default class Task extends Component {
         return (
             <View style={{ backgroundColor: 'olive', height: 50, margin: 15, flexDirection: 'row' }}>
                 <View style={{ flex: 1, backgroundColor: 'lime', justifyContent: 'center' }}>
-                    <Text style={{ textAlign: 'center', textAlignVertical: 'center' }}>V</Text>
+                    <Button
+                        style={{ textAlign: 'center', textAlignVertical: 'center' }}
+                        onPress={() => {
+                            Alert.alert("Congratulations for finishing - " + this.props.task.description)
+                            this.props.removeHandler(this.props.task.id)
+                        }}
+                        title="V"
+                    />
                 </View>
 
                 <View style={{ flex: 6, backgroundColor: 'olive', justifyContent: 'center' }}>
