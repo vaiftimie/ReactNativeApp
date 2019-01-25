@@ -1,17 +1,11 @@
 import React from 'react';
-import { View } from 'react-native';
-import Header from './components/Header/Header';
-import Content from './components/Content/Content';
-import Footer from './components/Footer/Footer';
+import { createAppContainer } from "react-navigation";
+import AppNavigator from './AppNavigator';
+
+const AppContainer = createAppContainer(AppNavigator);
 
 export default class App extends React.Component {
   render() {
-    return (
-      <View style={{ flex: 1 }}>
-        <Header />
-        <Content />
-        <Footer />
-      </View>
-    );
+    return <AppContainer />;
   }
 }

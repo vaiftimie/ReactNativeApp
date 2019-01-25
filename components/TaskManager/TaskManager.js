@@ -33,12 +33,14 @@ export default class TaskManager extends Component {
         return (
             <ScrollView ref={(scroll) => { this.scroll = scroll; }}>
                 <Button
-                    onPress={() => {
-                        this.addTask({
-                            id: this.state.tasks.length,
-                            description: "Task details " + this.state.tasks.length
-                        });
-                    }}
+                    onPress={() => this.props.navigation.navigate('NewTask')}
+
+                    // {
+                    //     this.addTask({
+                    //         id: this.state.tasks.length, //this needs to be changed
+                    //         description: "Task details " + this.state.tasks.length
+                    //     });
+                    // }
                     title="Add a new task"
                 />
                 {this.state.tasks.map((task, index) => <Task key={index} task={this.state.tasks[index]} removeHandler={this.removeTask} />)}

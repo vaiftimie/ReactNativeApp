@@ -9,8 +9,8 @@ export default class Content extends Component {
 
     render() {
         return (
-            <View style={{ flex: 7, backgroundColor: 'skyblue', flexDirection: 'column', }}>
-                <TaskManager/>
+            <View style={{ flex: 7, backgroundColor: 'skyblue', flexDirection: 'column' }}>
+                <TaskManager navigation={this.props.navigation} />
             </View>
         );
     }
