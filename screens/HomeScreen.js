@@ -45,16 +45,15 @@ export default class HomeScreen extends React.Component {
           description: taskName
         });
 
-        navigation.setParams({
-          taskId: null,
-          taskName: null
-        });
+      navigation.setParams({
+        taskId: null,
+        taskName: null
+      });
     }
 
     return (
       <View style={{ flex: 1 }}>
         <Header />
-
         <View style={{ flex: 7, backgroundColor: 'skyblue', flexDirection: 'column' }}>
           <ScrollView ref={(scroll) => { this.scroll = scroll; }}>
             <Button
@@ -62,9 +61,6 @@ export default class HomeScreen extends React.Component {
               title="Add a new task"
             />
             {this.state.tasks.map((task, index) => <Task key={task.id} task={this.state.tasks[index]} removeHandler={this.removeTask} />)}
-
-            <Text>{taskId}</Text>
-            <Text>{taskName}</Text>
           </ScrollView>
         </View>
 
