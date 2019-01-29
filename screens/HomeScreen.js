@@ -39,11 +39,15 @@ export default class HomeScreen extends React.Component {
     const taskName = navigation.getParam('taskName', null);
 
     if (taskId != null && taskName != null) {
-      console.debug("problem");
-      if (this.state.tasks.filter(task => task.id === taskId).length == 0) //this runs alot
+      if (this.state.tasks.filter(task => task.id === taskId).length == 0)
         this.addTask({
           id: taskId,
           description: taskName
+        });
+
+        navigation.setParams({
+          taskId: null,
+          taskName: null
         });
     }
 
