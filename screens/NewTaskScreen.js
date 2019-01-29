@@ -33,13 +33,21 @@ export default class NewTaskScreen extends React.Component {
         <Input
           placeholder='Task name'
           onChangeText={(text) => { this.setState({ taskName: text }) }} //test if it works without setState
+          containerStyle={{
+            alignSelf: 'center'
+          }}
+          inputContainerStyle={{
+            alignSelf: 'center'
+          }}
         />
 
         <Button
           title='SUBMIT'
           buttonStyle={{
             width: 100,
-            height: 50
+            height: 50,
+            alignSelf: 'center',
+            marginTop: 30
           }}
           onPress={() => this.props.navigation.navigate("Home", {
             taskId: this.generateUUID(),
